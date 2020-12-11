@@ -1,35 +1,64 @@
 package com.cg.employeepayroll.model;
 
+import java.io.Serializable;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
+
 import com.cg.employeepayroll.dto.EmployeePayrollDTO;
 
-public class EmployeePayrollData {
-	private int employeeId;
+@Entity
+@Table(name = "employee_payroll")
+public class EmployeePayrollData implements Serializable{
+	
+	private static final long serialVersionUID = -8900492704842756948L;
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private Long id;
+	
+	@Column(name="name")
 	private String name;
-	private long salary;
+	
+	@Column(name="basic_pay")
+	private String basic_pay;
 	
 	public EmployeePayrollData() {}
-	public EmployeePayrollData(int empId, EmployeePayrollDTO empPayrollDTO) {
-		this.setEmployeeId(empId);
-		this.setName(empPayrollDTO.name);
-		this.setSalary(empPayrollDTO.salary);
+	public EmployeePayrollData(EmployeePayrollDTO empPayrollDTO) {
+		this.setId(empPayrollDTO.getId());
+		this.setName(empPayrollDTO.getName());
+		this.setBasic_pay(empPayrollDTO.getBasic_pay());
 	}
-	public int getEmployeeId() {
-		return employeeId;
+
+	public Long getId() {
+		return id;
 	}
-	public void setEmployeeId(int employeeId) {
-		this.employeeId = employeeId;
+	
+	public void setId(Long employeeId) {
+		this.id = employeeId;
 	}
+	
 	public String getName() {
 		return name;
 	}
+	
 	public void setName(String name) {
 		this.name = name;
 	}
-	public long getSalary() {
-		return salary;
+	
+	public String getBasic_pay() {
+		return basic_pay;
 	}
-	public void setSalary(long salary) {
-		this.salary = salary;
+	public void setBasic_pay(String salary){
+		this.basic_pay = salary;
 	}
 	
+	public EmployeePayrollData(String name,String salary) {
+		this.name = name;
+		this.basic_pay = salary;
+	}
 }
