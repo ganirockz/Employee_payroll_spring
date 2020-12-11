@@ -1,15 +1,46 @@
 package com.cg.employeepayroll.dto;
 
+import com.cg.employeepayroll.model.EmployeePayrollData;
+
 public class EmployeePayrollDTO {
-	public String name;
-	public long salary;
 	
-	public EmployeePayrollDTO(String name,long salary) {
-		this.name = name;
-		this.salary = salary;
+	private Long id;
+	private String name;
+	private String basic_pay;
+	
+	public EmployeePayrollDTO(EmployeePayrollData employeePayroll) {
+		this.setId(employeePayroll.getId());
+		this.setName(employeePayroll.getName());
+		this.setSalary(employeePayroll.getBasic_pay());
 	}
 	
+	public EmployeePayrollDTO() {}
+	
 	public String toString() {
-		return "Name ="+this.name+", salary="+this.salary; 
+		return "Name ="+this.name+", salary="+this.basic_pay; 
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public String getBasic_pay() {
+		return basic_pay;
+	}
+
+	public void setSalary(String salary) {
+		this.basic_pay = salary;
 	}
 }
