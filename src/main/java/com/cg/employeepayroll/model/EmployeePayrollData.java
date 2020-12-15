@@ -1,6 +1,7 @@
 package com.cg.employeepayroll.model;
 
 import java.io.Serializable;
+import java.time.LocalDate;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -11,6 +12,9 @@ import javax.persistence.Table;
 
 import com.cg.employeepayroll.dto.EmployeePayrollDTO;
 
+import lombok.Data;
+
+@Data
 @Entity
 @Table(name = "employee_payroll")
 public class EmployeePayrollData implements Serializable{
@@ -25,40 +29,25 @@ public class EmployeePayrollData implements Serializable{
 	private String name;
 	
 	@Column(name="basic_pay")
-	private String basic_pay;
+	private String basicPay;
+	
+	@Column(name="gender")
+	private Character gender;
+	
+	@Column(name="start")
+	private LocalDate startDate;
 	
 	public EmployeePayrollData() {}
 	public EmployeePayrollData(EmployeePayrollDTO empPayrollDTO) {
 		this.setId(empPayrollDTO.getId());
 		this.setName(empPayrollDTO.getName());
-		this.setBasic_pay(empPayrollDTO.getBasic_pay());
-	}
-
-	public Long getId() {
-		return id;
+		this.setBasicPay(empPayrollDTO.getBasicPay());
 	}
 	
-	public void setId(Long employeeId) {
-		this.id = employeeId;
-	}
-	
-	public String getName() {
-		return name;
-	}
-	
-	public void setName(String name) {
+	public EmployeePayrollData(String name,String salary,Character gender,LocalDate startDate) {
 		this.name = name;
-	}
-	
-	public String getBasic_pay() {
-		return basic_pay;
-	}
-	public void setBasic_pay(String salary){
-		this.basic_pay = salary;
-	}
-	
-	public EmployeePayrollData(String name,String salary) {
-		this.name = name;
-		this.basic_pay = salary;
+		this.basicPay = salary;
+		this.gender = gender;
+		this.startDate = startDate;
 	}
 }
