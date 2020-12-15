@@ -1,0 +1,8 @@
+2020-12-16 00:15:30.472  INFO 11408 --- [restartedMain] c.c.e.EmployeePayrollApp1Application     : Starting EmployeePayrollApp1Application using Java 13.0.2 on LAPTOP-2DQUBLJ8 with PID 11408 (H:\java-eclipse\EmployeePayrollApp-1\target\classes started by ganeshrapeti in H:\java-eclipse\EmployeePayrollApp-1)
+2020-12-16 00:15:30.481 DEBUG 11408 --- [restartedMain] c.c.e.EmployeePayrollApp1Application     : Running with Spring Boot v2.4.0, Spring v5.3.1
+2020-12-16 00:15:30.482  INFO 11408 --- [restartedMain] c.c.e.EmployeePayrollApp1Application     : The following profiles are active: dev
+2020-12-16 00:15:32.410  WARN 11408 --- [restartedMain] com.zaxxer.hikari.util.DriverDataSource  : Registered driver with driverClassName=com.mysql.jdbc.Driver was not found, trying direct instantiation.
+2020-12-16 00:15:32.977  WARN 11408 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-16 00:15:33.490  WARN 11408 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-12-16 00:15:34.439  INFO 11408 --- [restartedMain] c.c.e.EmployeePayrollApp1Application     : Started EmployeePayrollApp1Application in 4.408 seconds (JVM running for 5.489)
+2020-12-16 00:15:34.444  INFO 11408 --- [restartedMain] c.c.e.EmployeePayrollApp1Application     : Employee Payroll App Started in DEV Environment
