@@ -11,6 +11,7 @@ import org.springframework.stereotype.Service;
 
 import com.cg.employeepayroll.dto.EmployeePayrollDTO;
 import com.cg.employeepayroll.exceptions.DetailsNotProvidedExceptions;
+import com.cg.employeepayroll.exceptions.EmployeePayrollException;
 import com.cg.employeepayroll.exceptions.UserNotFound;
 import com.cg.employeepayroll.model.EmployeePayrollData;
 import com.cg.employeepayroll.repository.EmployeePayrollRepository;
@@ -33,7 +34,7 @@ public class EmployeePayrollService implements IEmployeePayrollService{
 			EmployeePayrollData employeePayroll = new EmployeePayrollData(employeePayrollDTO.getName(), employeePayrollDTO.getBasicPay(),employeePayrollDTO.getGender(),employeePayrollDTO.getStartDate());
 			return new EmployeePayrollDTO(employeePayrollRepository.save(employeePayroll));
 		}
-		throw new DetailsNotProvidedExceptions("Invalid Data");
+		throw new EmployeePayrollException("Id is incorrect");
 	}
 	
 	@Override
