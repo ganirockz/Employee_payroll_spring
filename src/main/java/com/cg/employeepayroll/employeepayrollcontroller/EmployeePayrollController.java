@@ -2,6 +2,8 @@ package com.cg.employeepayroll.employeepayrollcontroller;
 
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,7 +39,7 @@ public class EmployeePayrollController {
 	}
 	
 	@PostMapping("/create")
-	public ResponseEntity<EmployeePayrollDTO> createUser(@RequestBody EmployeePayrollDTO user){
+	public ResponseEntity<EmployeePayrollDTO> createUser(@Valid @RequestBody EmployeePayrollDTO user){
 		try {
 			return ResponseEntity.status(HttpStatus.CREATED).body(employeePayrollService.createUser(user));
 		}catch(UserNotFound e) {
@@ -46,7 +48,7 @@ public class EmployeePayrollController {
 	}
 	
 	@PutMapping("/update")
-	public ResponseEntity<EmployeePayrollDTO> updateUser(@RequestBody EmployeePayrollDTO user){
+	public ResponseEntity<EmployeePayrollDTO> updateUser(@Valid @RequestBody EmployeePayrollDTO user){
 		try {
 			return ResponseEntity.status(HttpStatus.OK).body(employeePayrollService.updateUser(user));
 		}catch(UserNotFound e) {

@@ -6,3 +6,11 @@
 2020-12-16 00:15:33.490  WARN 11408 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
 2020-12-16 00:15:34.439  INFO 11408 --- [restartedMain] c.c.e.EmployeePayrollApp1Application     : Started EmployeePayrollApp1Application in 4.408 seconds (JVM running for 5.489)
 2020-12-16 00:15:34.444  INFO 11408 --- [restartedMain] c.c.e.EmployeePayrollApp1Application     : Employee Payroll App Started in DEV Environment
+2020-12-16 00:36:39.654  INFO 12032 --- [restartedMain] c.c.e.EmployeePayrollApp1Application     : Starting EmployeePayrollApp1Application using Java 13.0.2 on LAPTOP-2DQUBLJ8 with PID 12032 (H:\java-eclipse\EmployeePayrollApp-1\target\classes started by ganeshrapeti in H:\java-eclipse\EmployeePayrollApp-1)
+2020-12-16 00:36:39.658 DEBUG 12032 --- [restartedMain] c.c.e.EmployeePayrollApp1Application     : Running with Spring Boot v2.4.0, Spring v5.3.1
+2020-12-16 00:36:39.658  INFO 12032 --- [restartedMain] c.c.e.EmployeePayrollApp1Application     : The following profiles are active: dev
+2020-12-16 00:36:41.609  WARN 12032 --- [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2020-12-16 00:36:42.105  WARN 12032 --- [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2020-12-16 00:36:46.353  INFO 12032 --- [restartedMain] c.c.e.EmployeePayrollApp1Application     : Started EmployeePayrollApp1Application in 7.135 seconds (JVM running for 8.46)
+2020-12-16 00:36:46.356  INFO 12032 --- [restartedMain] c.c.e.EmployeePayrollApp1Application     : Employee Payroll App Started in DEV Environment
+2020-12-16 00:36:46.358  INFO 12032 --- [restartedMain] c.c.e.EmployeePayrollApp1Application     : Employee Payroll DB User is payrolluser 
