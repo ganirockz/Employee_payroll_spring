@@ -23,7 +23,7 @@ import com.cg.employeepayroll.model.EmployeePayrollData;
 import com.cg.employeepayroll.services.IEmployeePayrollService;
 
 @RestController
-@RequestMapping("/employeepayrollservice")
+@RequestMapping("/employeepayroll")
 public class EmployeePayrollController {
 	
 	@Autowired
