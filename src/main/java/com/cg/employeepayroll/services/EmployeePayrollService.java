@@ -30,8 +30,8 @@ public class EmployeePayrollService implements IEmployeePayrollService{
 	
 	@Override
 	public EmployeePayrollDTO createUser(EmployeePayrollDTO employeePayrollDTO) {
-		if(Objects.nonNull(employeePayrollDTO.getName()) && Objects.nonNull(employeePayrollDTO.getBasicPay())){
-			EmployeePayrollData employeePayroll = new EmployeePayrollData(employeePayrollDTO.getName(), employeePayrollDTO.getBasicPay(),employeePayrollDTO.getGender(),employeePayrollDTO.getStartDate());
+		if(Objects.nonNull(employeePayrollDTO.getName()) && Objects.nonNull(employeePayrollDTO.getSalary())){
+			EmployeePayrollData employeePayroll = new EmployeePayrollData(employeePayrollDTO.getName(), employeePayrollDTO.getSalary(),employeePayrollDTO.getGender(),employeePayrollDTO.getStartDate());
 			return new EmployeePayrollDTO(employeePayrollRepository.save(employeePayroll));
 		}
 		throw new EmployeePayrollException("Id is incorrect");
@@ -43,8 +43,8 @@ public class EmployeePayrollService implements IEmployeePayrollService{
 			if(Objects.nonNull(employeePayrollDTO.getName())) {
 				employeePayroll.setName(employeePayrollDTO.getName());
 			}
-			if(Objects.nonNull(employeePayrollDTO.getBasicPay())) {
-				employeePayroll.setBasicPay(employeePayrollDTO.getBasicPay());
+			if(Objects.nonNull(employeePayrollDTO.getSalary())) {
+				employeePayroll.setSalary(employeePayrollDTO.getSalary());
 			}
 			return new EmployeePayrollDTO(employeePayrollRepository.save(employeePayroll));
 		}).orElseThrow(() -> new UserNotFound("UserNotFound"));

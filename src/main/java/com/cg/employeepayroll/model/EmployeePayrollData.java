@@ -2,12 +2,16 @@ package com.cg.employeepayroll.model;
 
 import java.io.Serializable;
 import java.time.LocalDate;
+import java.util.List;
 
+import javax.persistence.CollectionTable;
 import javax.persistence.Column;
+import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.Table;
 
 import com.cg.employeepayroll.dto.EmployeePayrollDTO;
@@ -28,25 +32,46 @@ public class EmployeePayrollData implements Serializable{
 	@Column(name="name")
 	private String name;
 	
-	@Column(name="basic_pay")
-	private String basicPay;
+	@Column(name="salary")
+	private String salary;
 	
 	@Column(name="gender")
-	private Character gender;
+	private String gender;
 	
-	@Column(name="start")
+	@Column(name="start_date")
 	private LocalDate startDate;
+	
+	@Column(name="profile_pic")
+	private String profilePic;
+	
+	@Column(name="note")
+	private String note;
+	
+	@ElementCollection
+	@CollectionTable(name="employee_department",joinColumns = @JoinColumn(name="id"))
+	@Column(name="department")       
+	private List<String> departments;
 	
 	public EmployeePayrollData() {}
 	public EmployeePayrollData(EmployeePayrollDTO empPayrollDTO) {
 		this.setId(empPayrollDTO.getId());
-		this.setName(empPayrollDTO.getName());
-		this.setBasicPay(empPayrollDTO.getBasicPay());
+		this.updateEmployeePayrollData(empPayrollDTO);
 	}
 	
-	public EmployeePayrollData(String name,String salary,Character gender,LocalDate startDate) {
+	
+	private void updateEmployeePayrollData(EmployeePayrollDTO empPayrollDTO) {
+		this.name = empPayrollDTO.getName();
+		this.salary = empPayrollDTO.getSalary();
+		this.gender = empPayrollDTO.getGender();
+		this.startDate = empPayrollDTO.getStartDate();
+		this.profilePic = empPayrollDTO.getProfilePic();
+		this.note = empPayrollDTO.getNote();
+		this.departments = empPayrollDTO.getDepartments();
+	}
+	
+	public EmployeePayrollData(String name,String salary,String gender,LocalDate startDate) {
 		this.name = name;
-		this.basicPay = salary;
+		this.salary = salary;
 		this.gender = gender;
 		this.startDate = startDate;
 	}
