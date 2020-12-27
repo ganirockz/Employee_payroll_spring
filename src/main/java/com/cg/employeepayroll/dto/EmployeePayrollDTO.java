@@ -28,12 +28,12 @@ public class EmployeePayrollDTO {
 	@Pattern(regexp = "[0-9]+", message ="salary should be a number")
 	private String salary;
 	
-	@JsonFormat(pattern = "dd-MMM-yyyy")
+	@JsonFormat(pattern = "dd MMM yyyy")
 	@NotNull(message="startDate should not be empty")
 	@PastOrPresent(message="startDate should be past or todays date")
 	private LocalDate startDate;
 	
-	@Pattern(regexp="male|female",message="gender should be single character")
+	@Pattern(regexp="male|female",message="gender should be either male or female")
 	private String gender;
 	
 	@NotBlank(message="Note cannot be empty")
@@ -49,6 +49,11 @@ public class EmployeePayrollDTO {
 		this.setId(employeePayroll.getId());
 		this.setName(employeePayroll.getName());
 		this.setSalary(employeePayroll.getSalary());
+		this.setDepartments(employeePayroll.getDepartments());
+		this.setGender(employeePayroll.getGender());
+		this.setNote(employeePayroll.getNote());
+		this.setProfilePic(employeePayroll.getProfilePic());
+		this.setStartDate(employeePayroll.getStartDate());
 	}
 	
 	public EmployeePayrollDTO() {}
