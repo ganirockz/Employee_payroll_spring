@@ -8,6 +8,7 @@ import javax.persistence.CollectionTable;
 import javax.persistence.Column;
 import javax.persistence.ElementCollection;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -47,7 +48,7 @@ public class EmployeePayrollData implements Serializable{
 	@Column(name="note")
 	private String note;
 	
-	@ElementCollection
+	@ElementCollection(fetch = FetchType.EAGER)
 	@CollectionTable(name="employee_department",joinColumns = @JoinColumn(name="id"))
 	@Column(name="department")       
 	private List<String> departments;
@@ -57,7 +58,6 @@ public class EmployeePayrollData implements Serializable{
 		this.setId(empPayrollDTO.getId());
 		this.updateEmployeePayrollData(empPayrollDTO);
 	}
-	
 	
 	private void updateEmployeePayrollData(EmployeePayrollDTO empPayrollDTO) {
 		this.name = empPayrollDTO.getName();
@@ -69,10 +69,4 @@ public class EmployeePayrollData implements Serializable{
 		this.departments = empPayrollDTO.getDepartments();
 	}
 	
-	public EmployeePayrollData(String name,String salary,String gender,LocalDate startDate) {
-		this.name = name;
-		this.salary = salary;
-		this.gender = gender;
-		this.startDate = startDate;
-	}
 }

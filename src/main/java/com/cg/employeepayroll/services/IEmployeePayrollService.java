@@ -10,7 +10,9 @@ public interface IEmployeePayrollService {
 
 	EmployeePayrollDTO createUser(EmployeePayrollDTO user);
 
-	EmployeePayrollDTO updateUser(EmployeePayrollDTO user);
+	EmployeePayrollDTO updateUser(Long id,EmployeePayrollDTO user);
 
 	EmployeePayrollDTO deleteUser(Long id);
+
+	EmployeePayrollDTO getUserById(Long id);
 }
